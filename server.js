@@ -1,12 +1,15 @@
 /*Archivo principal server.js*/
 
 import express from 'express';
-import router from "./Routes/routes.js"
-
+import router from "./Routes/routes.js";
 import { sequelize } from "./Database/database.js";
+import cors from 'cors';
 
 //Crear Instancia
 const app = express();
+
+app.use(cors());
+
 
 // Middleware- Montar enrutador en app principal
 app.use(express.json());
